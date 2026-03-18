@@ -1,8 +1,8 @@
 import Anthropic from '@anthropic-ai/sdk';
-import { config } from '../config';
-import { AIAnalysis, OHLCVBar, TechnicalIndicators, NewsArticle } from '../types';
-import { RequestQueue } from '../utils/requestQueue';
-import { getCached, setCached } from '../utils/cache';
+import { config } from '../config.js';
+import { AIAnalysis, OHLCVBar, TechnicalIndicators, NewsArticle } from '../types/index.js';
+import { RequestQueue } from '../utils/requestQueue.js';
+import { getCached, setCached } from '../utils/cache.js';
 
 const queue = new RequestQueue(500, 'Claude');
 

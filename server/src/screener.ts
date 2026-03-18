@@ -1,11 +1,11 @@
-import { config } from './config';
-import { ScoutCandidate, TickerSnapshot } from './types';
-import { calculateIndicators } from './indicators';
-import { fetchAllSnapshots, fetchIntradayBars, fetchTickerDetails } from './services/polygon';
-import { fetchYahooScreener, fetchYahooQuote, fetchYahooIntradayBars } from './services/yahooFinance';
-import { fetchCompanyNews } from './services/finnhub';
-import { analyzeStock } from './services/claude';
-import { getCached, setCached } from './utils/cache';
+import { config } from './config.js';
+import { ScoutCandidate, TickerSnapshot } from './types/index.js';
+import { calculateIndicators } from './indicators.js';
+import { fetchAllSnapshots, fetchIntradayBars, fetchTickerDetails } from './services/polygon.js';
+import { fetchYahooScreener, fetchYahooQuote, fetchYahooIntradayBars } from './services/yahooFinance.js';
+import { fetchCompanyNews } from './services/finnhub.js';
+import { analyzeStock } from './services/claude.js';
+import { getCached, setCached } from './utils/cache.js';
 
 const VALID_EXCHANGES = ['XNYS', 'XNAS', 'XASE', 'NYSE', 'NASDAQ', 'AMEX', 'NMS', 'NYQ', 'NGM', 'NCM', 'NAS', 'ASE'];
 

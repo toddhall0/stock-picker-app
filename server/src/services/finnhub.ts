@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { config } from '../config';
-import { NewsArticle } from '../types';
-import { RequestQueue } from '../utils/requestQueue';
-import { getCached, setCached } from '../utils/cache';
+import { config } from '../config.js';
+import { NewsArticle } from '../types/index.js';
+import { RequestQueue } from '../utils/requestQueue.js';
+import { getCached, setCached } from '../utils/cache.js';
 
 const BASE_URL = 'https://finnhub.io/api/v1';
 const queue = new RequestQueue(200, 'Finnhub');

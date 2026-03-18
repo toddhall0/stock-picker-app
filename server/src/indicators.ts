@@ -1,4 +1,4 @@
-import { OHLCVBar, TechnicalIndicators } from './types';
+import { OHLCVBar, TechnicalIndicators } from './types/index.js';
 
 /**
  * Calculate Volume Weighted Average Price from OHLCV bars.

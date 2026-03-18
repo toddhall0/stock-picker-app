@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 import path from 'path';
-import { AppConfig } from './types';
+import { AppConfig } from './types/index.js';
 
 dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 

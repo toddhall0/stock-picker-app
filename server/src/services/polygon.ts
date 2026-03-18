@@ -1,8 +1,8 @@
 import axios, { AxiosError } from 'axios';
-import { config } from '../config';
-import { OHLCVBar, TickerSnapshot } from '../types';
-import { RequestQueue } from '../utils/requestQueue';
-import { getCached, setCached } from '../utils/cache';
+import { config } from '../config.js';
+import { OHLCVBar, TickerSnapshot } from '../types/index.js';
+import { RequestQueue } from '../utils/requestQueue.js';
+import { getCached, setCached } from '../utils/cache.js';
 
 const BASE_URL = 'https://api.polygon.io';
 const queue = new RequestQueue(250, 'Polygon');

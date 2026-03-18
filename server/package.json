@@ -14,8 +14,7 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.1",
     "node-cache": "^5.1.2",
-    "node-cron": "^3.0.3",
-    "yahoo-finance2": "^2.13.2"
+    "node-cron": "^3.0.3"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",

@@ -1,7 +1,7 @@
 import { Router, Request, Response } from 'express';
-import { getMarketStatus } from '../config';
-import { screener } from '../screener';
-import { fetchCompanyNews } from '../services/finnhub';
+import { getMarketStatus } from '../config.js';
+import { screener } from '../screener.js';
+import { fetchCompanyNews } from '../services/finnhub.js';
 
 const router = Router();
 

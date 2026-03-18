@@ -2,9 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import path from 'path';
 import cron from 'node-cron';
-import { config, getMarketStatus } from './config';
-import apiRouter, { broadcastSSE } from './routes/api';
-import { screener } from './screener';
+import { config, getMarketStatus } from './config.js';
+import apiRouter, { broadcastSSE } from './routes/api.js';
+import { screener } from './screener.js';
 
 const app = express();
 
