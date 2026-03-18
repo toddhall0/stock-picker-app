@@ -1,0 +1,56 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: |
+            server/package-lock.json
+            client/package-lock.json
+
+      - name: Install & build client
+        working-directory: client
+        run: |
+          npm ci
+          npm run build
+
+      - name: Install & build server
+        working-directory: server
+        run: |
+          npm ci
+          npm run build
+
+      - name: Verify build
+        run: |
+          test -f server/dist/index.js
+          test -f server/public/index.html
+          echo "Build verified successfully"
+
+  # Uncomment and configure one of the deployment targets below:
+
+  # deploy-railway:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: bervProject/railway-deploy@main
+  #       with:
+  #         railway_token: ${{ secrets.RAILWAY_TOKEN }}
+  #         service: ${{ secrets.RAILWAY_SERVICE }}
+
+  # deploy-render:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Trigger Render deploy
+  #       run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"

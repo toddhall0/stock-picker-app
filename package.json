@@ -1,0 +1,19 @@
+{
+  "name": "intraday-scout",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Real-time AI-powered stock research and analysis tool",
+  "scripts": {
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build:client": "cd client && npm ci && npm run build",
+    "build:server": "cd server && npm ci && npm run build",
+    "build": "npm run build:client && npm run build:server",
+    "start": "cd server && node dist/index.js",
+    "install:all": "cd server && npm ci && cd ../client && npm ci"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
